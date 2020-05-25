@@ -1,0 +1,10 @@
+[
+    {
+        "groupName": "QuickSightAuthor",
+        "precedence": 1
+    },
+    {
+        "groupName": "QuickSightReader",
+        "precedence": 2
+    }
+]

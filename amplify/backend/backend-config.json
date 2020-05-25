@@ -5,6 +5,24 @@
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
 			"customAuth": false
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "amplifyangularqs6212f3a5",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			]
 		}
-	}
+	},
+	"function": {},
+	"api": {}
 }
