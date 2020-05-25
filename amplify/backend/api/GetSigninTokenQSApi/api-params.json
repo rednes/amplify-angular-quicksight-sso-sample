@@ -1,0 +1,63 @@
+{
+    "paths": [
+        {
+            "name": "/api",
+            "lambdaFunction": "GetSigninTokenQSLambda",
+            "privacy": {
+                "userPoolGroups": {
+                    "QuickSightAuthor": [
+                        "/POST"
+                    ],
+                    "QuickSightReader": [
+                        "/POST"
+                    ]
+                }
+            }
+        }
+    ],
+    "resourceName": "GetSigninTokenQSApi",
+    "apiName": "GetSigninTokenQSApi",
+    "authResourceName": "amplifyangularqs6212f3a5",
+    "functionArns": [
+        {
+            "lambdaFunction": "GetSigninTokenQSLambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyangularqs-dev-130705-authRole",
+        "unAuthRoleName": "amplify-amplifyangularqs-dev-130705-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "GetSigninTokenQSLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "amplifyangularqs6212f3a5",
+            "attributes": [
+                "UserPoolId"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "userPoolGroups",
+            "attributes": [
+                "QuickSightAuthorGroupRole"
+            ]
+        },
+        {
+            "category": "auth",
+            "resourceName": "userPoolGroups",
+            "attributes": [
+                "QuickSightReaderGroupRole"
+            ]
+        }
+    ]
+}

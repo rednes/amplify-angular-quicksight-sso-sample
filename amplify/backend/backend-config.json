@@ -23,6 +23,48 @@
 			]
 		}
 	},
-	"function": {},
-	"api": {}
+	"function": {
+		"GetSigninTokenQSLambda": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
+		}
+	},
+	"api": {
+		"GetSigninTokenQSApi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "GetSigninTokenQSLambda",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				},
+				{
+					"category": "auth",
+					"resourceName": "amplifyangularqs6212f3a5",
+					"attributes": [
+						"UserPoolId"
+					]
+				},
+				{
+					"category": "auth",
+					"resourceName": "userPoolGroups",
+					"attributes": [
+						"QuickSightAuthorGroupRole"
+					]
+				},
+				{
+					"category": "auth",
+					"resourceName": "userPoolGroups",
+					"attributes": [
+						"QuickSightReaderGroupRole"
+					]
+				}
+			]
+		}
+	}
 }
